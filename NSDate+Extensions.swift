@@ -24,13 +24,13 @@ extension NSDate{
     //(NSYearCalendarUnit, NSMonthCalendarUnit , NSDayCalendarUnit , NSWeekCalendarUnit ,  NSHourCalendarUnit , NSMinuteCalendarUnit , NSSecondCalendarUnit , NSWeekdayCalendarUnit , NSWeekdayOrdinalCalendarUnit);
     
     
-    
+
     class func currentCalendar() -> NSCalendar
     {
-        //
-        //        if (sharedCalendar == nil){
-        //            sharedCalendar = NSCalendar.autoupdatingCurrentCalendar();
-        //        }
+//
+//        if (sharedCalendar == nil){
+//            sharedCalendar = NSCalendar.autoupdatingCurrentCalendar();
+//        }
         return NSCalendar.autoupdatingCurrentCalendar();
     }
     
@@ -356,13 +356,11 @@ extension NSDate{
         return formatter.stringFromDate(self);
     }
     
-    func stringWithFormat(format:String) -> String{
+    func stringWithFormat(format:String) -> String {
         var formatter = NSDateFormatter();
         formatter.dateFormat = format;
         return formatter.stringFromDate(self);
     }
-    // Short string utilities
-    // TODO : - (NSString *) stringWithDateStyle: (NSDateFormatterStyle) dateStyle timeStyle: (NSDateFormatterStyle) timeStyle;
     
     var shortString:String{
         return stringWithDateStyle(NSDateFormatterStyle.ShortStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
@@ -452,6 +450,6 @@ extension NSDate{
         var components = NSDate.currentCalendar().components(componentFlags, fromDate: self);
         return components.year;
     }
-    
-    
+
+
 }
